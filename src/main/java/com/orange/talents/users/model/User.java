@@ -34,5 +34,5 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     @Builder.Default
-    private final List<Address> addresses = new ArrayList<>();
+    private List<Address> addresses = new ArrayList<>();
 }
