@@ -29,7 +29,7 @@ public class UserController {
 
     @PostMapping(value = "/{id}/address")
     public ResponseEntity<AddressResponseDTO> createAddress(@PathVariable Long id, @RequestBody AddressRequestDTO addressRequestDTO) {
-        URI location = URI.create("/{id}/address");
+        URI location = URI.create(String.format("/%s/address", id));
         return ResponseEntity.created(location).body(this.userService.saveAddress(id, addressRequestDTO));
     }
 
