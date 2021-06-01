@@ -56,9 +56,9 @@ public class UserService {
         return AddressMapper.addressToAddressResponseDTO(this.addressRepository.save(address));
     }
 
-    public List<Address> listAddresses(Long userId) {
+    public UserResponseDTO findUserById(Long userId) {
         User user = this.userRepository.findById(userId).orElseThrow(() -> new ElementNotFoundException(userId));
-        return user.getAddresses();
+        return UserMapper.userToUserDto(user);
     }
 
     private Endereco findAddressByCep(String cep) {
