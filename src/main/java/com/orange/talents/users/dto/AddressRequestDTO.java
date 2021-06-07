@@ -6,16 +6,6 @@ import javax.validation.constraints.NotBlank;
 
 @Getter
 public class AddressRequestDTO {
-    public AddressRequestDTO(@NotBlank String street, @NotBlank String complement, @NotBlank String neighborhood,
-                             @NotBlank String city, @NotBlank String state, @NotBlank String cep) {
-        this.street = street;
-        this.complement = complement;
-        this.neighborhood = neighborhood;
-        this.city = city;
-        this.state = state;
-        this.cep = cep;
-    }
-
     @NotBlank
     private String street;
     @NotBlank
@@ -29,5 +19,5 @@ public class AddressRequestDTO {
     @NotBlank
     private String state;
     @NotBlank
-    private String cep;
+    private String zipCode;
 }
