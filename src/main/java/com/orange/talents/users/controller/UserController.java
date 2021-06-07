@@ -5,7 +5,6 @@ import com.orange.talents.users.dto.AddressResponseDTO;
 import com.orange.talents.users.dto.UserRequestDTO;
 import com.orange.talents.users.dto.UserResponseDTO;
 import com.orange.talents.users.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,8 +15,11 @@ import java.net.URI;
 @RequestMapping("users")
 public class UserController {
 
-    @Autowired
     private UserService userService;
+
+    UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @PostMapping
     public ResponseEntity<UserResponseDTO> createUser(@Valid @RequestBody UserRequestDTO userDTORequest) {
