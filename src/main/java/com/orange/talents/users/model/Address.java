@@ -21,7 +21,7 @@ public class Address {
     private String city;
     private String state;
     private String cep;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "user_id")
     @JsonBackReference
     @Setter
